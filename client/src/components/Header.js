@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import history from 'routerHistory';
+
 import {
   Collapse,
   Navbar,
@@ -49,17 +50,13 @@ class Header extends React.Component {
 
   render() {
     return (
-      <BrowserRouter>
         <Navbar color="dark" dark expand="md">
           <NavbarBrand href="/">My App</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                <NavLink onClick={(e) => history.push('/components')}>Components</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
@@ -81,7 +78,6 @@ class Header extends React.Component {
             </Nav>
           </Collapse>
         </Navbar>
-      </BrowserRouter>
     );
   }
 }

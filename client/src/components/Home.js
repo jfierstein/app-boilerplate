@@ -1,6 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import {
+  Container, Row, Col
+} from 'reactstrap';
+
 const mapStoreStateToProps = (store) => {
   return {};
 }
@@ -24,9 +28,13 @@ class Home extends React.Component {
 
   render() {
     return (
-        <div>
-          Home
-        </div>
+      <Container>
+        <Row>
+          <Col xs="auto" style={{marginLeft:'auto', marginRight: 'auto', textAlign: 'center'}}>
+            Home
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
